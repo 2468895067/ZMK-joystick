@@ -1,0 +1,59 @@
+// nice_nano_v2.dtsi - 设备树配置
+
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bits.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/outputs.h>
+
+/ {
+    // 启用 ADC 用于读取摇杆模拟信号
+    &adc {
+        status = "okay";
+    };
+
+    // 配置 Joystick (摇杆)
+    // 注意：根据你的实际接线修改下面的 "pins" 值
+    // 假设你的摇杆 X轴 接在 P0.02 (PIN 2), Y轴 接在 P0.03 (PIN 3)
+    joystick_pins: joystick_pins {
+        // 定义X轴和Y轴的ADC通道
+        x-channel = <&adc CHANNEL_2>; // P0.02
+        y-channel = <&adc CHANNEL_3>; // P0.03
+        // 如果你的接线不同，请修改 CHANNEL_X 的数字对应你的GPIO
+    };
+
+    // 定义摇杆设备
+    joystick {
+        status = "okay";
+        // 引用上面定义的引脚
+        zmk,joystick-nodes = <&joystick_pins>;
+        // 摇杆按下作为按键（如果摇杆有按下功能，可以启用）
+        // zmk,button-gpios = <&gpio0 4 GPIO_ACTIVE_LOW>; // 假设按下接在P0.04
+    };
+
+    // 启用鼠标功能
+    // 将摇杆移动映射为鼠标移动
+    mouse {
+        status = "okay";
+        // 设置鼠标移动灵敏度
+        zmk,mouse-speed = <5>; // 数值越大，鼠标移动越快
+        // 设置鼠标移动方向
+        zmk,mouse-direction = <0x00>; // 0x00=正常, 0x01=X轴反向, 0x02=Y轴反向
+    };
+
+    // 定义输出设备（USB和蓝牙）
+    outputs {
+        status = "okay";
+        // 定义USB输出
+        usb {
+            status = "okay";
+            zmk,output = <USB>;
+        };
+        // 定义蓝牙输出
+        ble {
+            status = "okay";
+            zmk,output = <BLE>;
+            // 可以配置多个蓝牙设备
+            zmk,ble-devices = <1>;
+        };
+    };
+};
