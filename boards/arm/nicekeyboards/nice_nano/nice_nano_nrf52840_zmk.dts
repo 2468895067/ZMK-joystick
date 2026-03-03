@@ -1,0 +1,45 @@
+/*
+ * Copyright (c) 2026 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/dts-v1/;
+
+#include <../boards/nicekeyboards/nice_nano/nice_nano.dts>
+#include <common/nordic/nrf52840_uf2_boot_mode.dtsi>
+
+/ {
+    joystick {
+        compatible = "joystick";
+        status = "okay";
+        x-axis-adc = <&adc 0>;
+        y-axis-adc = <&adc 1>;
+    };
+};
+
+&adc {
+    status = "okay";
+    #address-cells = <1>;
+    #size-cells = <0>;
+    
+    channel@0 {
+        reg = <0>;
+        zephyr,gain = "ADC_GAIN_1_5";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+        zephyr,resolution = <12>;
+        zephyr,vref-mv = <3600>;
+        label = "JOYSTICK_X";
+    };
+    
+    channel@1 {
+        reg = <1>;
+        zephyr,gain = "ADC_GAIN_1_5";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+        zephyr,resolution = <12>;
+        zephyr,vref-mv = <3600>;
+        label = "JOYSTICK_Y";
+    };
+};

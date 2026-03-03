@@ -1,0 +1,1 @@
+add_subdirectory_ifdef(CONFIG_JOYSTICK_MOUSE drivers/joystick_mouse)
