@@ -5,8 +5,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/keys.h>
+
 
 / {
     keymap {
@@ -14,8 +13,16 @@
 
         default_layer {
             bindings = <
-                &mkp MB1
+                &mkp MB1                // 鼠标左键
+                &toggle_joystick        // 启用/禁用摇杆功能的按键
             >;
         };
     };
+};
+
+// 定义启用/禁用摇杆的行为
+behavior_toggle_joystick: behavior-toggle-joystick {
+    compatible = "zmk,behavior-toggle";
+    label = "TOGGLE JOYSTICK";
+    toggle = <&joystick0>;
 };
