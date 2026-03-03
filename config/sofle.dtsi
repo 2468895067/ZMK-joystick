@@ -18,19 +18,14 @@
     };
 
     joystick0: joystick {
-        compatible = "zmk,input-analog-joystick";  
+        compatible = "zmk,input-analog-joystick";
         label = "JOYSTICK";
 
         x-input = <&adc 0>;
         y-input = <&adc 1>;
 
-        x-invert;
-        y-invert;
-
         deadzone = <200>;
         resolution = <12>;
-
-        enable = <0>;   // 初始状态：禁用摇杆
     };
 };
 
