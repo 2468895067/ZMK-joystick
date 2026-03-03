@@ -1,0 +1,46 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	chosen {
+		zmk,kscan = &kscan0;
+		zmk,matrix_transform = &default_transform;
+	};
+
+	default_transform: keymap_transform_0 {
+		compatible = "zmk,matrix-transform";
+		columns = <1>;
+		rows = <1>;
+		map = <0>;
+	};
+
+	kscan0: kscan {
+		compatible = "zmk,kscan-gpio-matrix";
+		label = "KSCAN";
+		
+		// 虚拟按键扫描 - 只使用一个GPIO引脚
+		row-gpios = <&gpio0 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+		col-gpios = <>;
+		diode-direction = "col2row";
+	};
+	
+	joystick: joystick {
+		compatible = "zmk,joystick";
+		status = "okay";
+		label = "JOYSTICK_MOUSE";
+		
+		// ADC通道
+		x-adc-channel = <0>;  // AIN0
+		y-adc-channel = <1>;  // AIN1
+		
+		// 配置
+		deadzone = <100>;
+		sensitivity = <5>;
+		polling-interval-ms = <20>;
+		invert-y = <false>;
+		always-active;
+	};
+	
+	// 禁用蓝牙，只使用USB
+	/delete-node/ &ble;
+};
