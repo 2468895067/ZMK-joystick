@@ -24,7 +24,7 @@
         deadzone = <100>;
         sensitivity = <5>;
         polling-interval-ms = <20>;
-        invert-y = <false>;
+        invert-y = <0>;
         always-active = <true>;
     };
 };
