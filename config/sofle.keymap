@@ -22,20 +22,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/modifiers.h>
 
-    // 定义行为 (Behaviors)
-    behaviors {
-        // 定义一个鼠标行为，引用上面设备树中定义的摇杆
-        mouse_layer {
-            compatible = "zmk,behavior-mouse";
-            // 灵敏度: 数值越小，鼠标移动越快 (基于差值计算)
-            sensitivity = <5>; 
-            // 加速度: 长按移动会加速
-            acceleration = <2>;
-            // 关键: 关联设备树中的摇杆标签
-            joystick = &analog_joystick;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
