@@ -17,12 +17,6 @@
 #define JOYSTICK_MOVE_UP     ZMK_MOUSE_MOVE(Y, -1,  0, 1, 1)
 #define JOYSTICK_MOVE_DOWN   ZMK_MOUSE_MOVE(Y,  1,  0, 1, 1)
 
-// --- 连接模式切换 ---
-// 方便在USB和蓝牙之间切换
-#define CONN_USB   &passthrough
-#define CONN_BLE_1 &bt BT_SEL 1
-#define CONN_BLE_2 &bt BT_SEL 2
-#define CONN_BLE_3 &bt BT_SEL 3
 
 // ==================================================
 // 定义图层 (Layers)
