@@ -6,15 +6,26 @@
 
 #include <behaviors.dtsi>
 
+/ {
+    // Activate ADJUST layer by pressing raise and lower
 
-&keyboard {
-    compatible = "zmk,keymap";
+    conditional_layers {
+        compatible = "zmk,keymap";
 
-    default_layer {
+        adjust_layer {
+            if-layers = <0 0>;
+            then-layer = <0>;
+        };
+    };
+
+
+        layer_0 {
         bindings = <
             &behavior_joystick_to_keys
         >;
+
     };
+
 };
 
 // 行为：摇杆移动映射到 WASD
