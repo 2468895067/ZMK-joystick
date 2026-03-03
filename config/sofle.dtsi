@@ -63,7 +63,7 @@
 			input-code = <INPUT_REL_X>;
 		};
 		y-ch {
-			io-channels = <&adc 8>;
+			io-channels = <&adc 7>;
 			mv-mid = <512>;
 			mv-min-max = <10>;
 			mv-deadzone = <100>;
