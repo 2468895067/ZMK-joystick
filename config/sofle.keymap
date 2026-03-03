@@ -7,22 +7,29 @@
 #include <behaviors.dtsi>
 
 
-/ {
-    keymap {
-        compatible = "zmk,keymap";
+&keyboard {
+    compatible = "zmk,keymap";
 
-        default_layer {
-            bindings = <
-                &mkp MB1                // 鼠标左键
-                &toggle_joystick        // 启用/禁用摇杆功能的按键
-            >;
-        };
+    default_layer {
+        bindings = <
+            &behavior_joystick_to_keys
+        >;
     };
 };
 
-// 定义启用/禁用摇杆的行为
-behavior_toggle_joystick: behavior-toggle-joystick {
-    compatible = "zmk,behavior-toggle";
-    label = "TOGGLE JOYSTICK";
-    toggle = <&joystick0>;
+// 行为：摇杆移动映射到 WASD
+behavior_joystick_to_keys: behavior-joystick-to-keys {
+    compatible = "zmk,behavior-joystick-to-keys";
+    label = "JOYSTICK -> WASD";
+
+    #x-axis-threshold = <1000>;
+    #y-axis-threshold = <1000>;
+
+    w_key = <&kp W>;
+    a_key = <&kp A>;
+    s_key = <&kp S>;
+    d_key = <&kp D>;
+
+    x-invert;
+    y-invert;
 };
