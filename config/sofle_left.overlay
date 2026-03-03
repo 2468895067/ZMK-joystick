@@ -1,0 +1,21 @@
+/*
+ * Copyright (c) 2020 Ryan Cross
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "sofle.dtsi"
+
+
+
+
+
+//  &left_encoder {
+//     status = "okay";
+// };
+
+
+
+// &left_ex1_encoder {
+//     status = "okay";
+// };
