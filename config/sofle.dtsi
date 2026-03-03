@@ -57,32 +57,6 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)                 RC(2,6) RC(2,7) 
     };
 
 
-    // 定义一个名为 "analog_joystick" 的节点
-    analog_joystick {
-        // 关键：引用 ZMK 官方的摇杆驱动
-        compatible = "analog-axis";
-        poll-period-ms = <1>;
-
-        // X 轴配置
-        x_axis {
-            io-channels = <&adc 2>; // 连接到 AIN2
-            in_deadzone = <200>; // 死区
-            in_min = <0>;     // ADC 最小值
-            in_max = <4095>;  // ADC 最大值
-            zephyr,axis = <INPUT_ABS_X>; // 映射为 X 轴
-        };
-
-        // Y 轴配置 (同理)
-        y_axis {
-            io-channels = <&adc 3>; // 连接到 AIN2
-            in_deadzone = <200>; // 死区
-            in_min = <0>;     // ADC 最小值
-            in_max = <4095>;  // ADC 最大值
-            zephyr,axis = <INPUT_ABS_Y>; // 映射为 X 轴
-        };
-    };
-
-
     left_encoder: encoder_left {
         compatible = "alps,ec11";
         a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
