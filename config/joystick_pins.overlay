@@ -2,8 +2,8 @@
     joystick_pins: joystick_pins {
         compatible = "zmk,joystick-pins";
         
-        x-axis-adc = <&adc 0>;  // AIN0 (P0.02)
-        y-axis-adc = <&adc 1>;  // AIN1 (P0.03)
+        x-axis-adc = <&adc 2>;  // AIN0 (P0.02)
+        y-axis-adc = <&adc 3>;  // AIN1 (P0.03)
         
         status = "okay";
     };
