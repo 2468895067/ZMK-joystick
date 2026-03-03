@@ -40,13 +40,15 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // 层 0
         default_layer {
+            display-name = "QWERTY";
             // 由于没有物理按键，这里主要处理连接状态
             // 默认启动为USB模式
             // 摇杆移动行为
             // ZMK 会自动将摇杆移动映射为鼠标移动
             // 不需要额外定义按键绑定
-        };
+            bindings = < >;
+        // 层 0
+
     };
 };
