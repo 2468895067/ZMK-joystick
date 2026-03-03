@@ -18,7 +18,7 @@
     };
 
     joystick0: joystick {
-        compatible = "zmk,input-analog-joystick";
+        compatible = "zmk,input-analog-joysticker";
         label = "JOYSTICK";
 
         x-input = <&adc 0>;
