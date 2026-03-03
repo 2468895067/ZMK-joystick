@@ -11,6 +11,12 @@
 
 #include <input/processors.dtsi>
 
+
+#include <layouts/josefadamcik/sofle.dtsi>
+#include <dt-bindings/zmk/pointing.h>
+
+
+
 / {
     chosen {
         zmk,kscan = &kscan0;
