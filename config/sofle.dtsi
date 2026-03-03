@@ -8,7 +8,8 @@
 #include <layouts/josefadamcik/sofle.dtsi>
 #include <dt-bindings/zmk/pointing.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-
+#include <behaviors.dtsi>
+#include "behaviors/joystick_behavior.dtsi"
 
 &josefadamcik_sofle_layout {
     transform = <&default_transform>;
