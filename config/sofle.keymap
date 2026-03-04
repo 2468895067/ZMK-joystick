@@ -15,26 +15,41 @@
         default_layer {
 
             bindings = <
-    &kp N7 &kp N8 &kp N9
-    &kp N4 &kp N5 &kp N6
-    &kp N4 &kp N5 &kp N6
-            >;
-
-        };
-
-        num_layer {
-            bindings = <
-    &trans   &kp N7 &kp N8 &kp N9
-    &trans   &kp N4 &kp N5 &kp N6
-    &trans   &kp N4 &kp N5 &kp N6
+    &mo 1      &kp PAGE_DOWN  &kp ESC    &mo 4         &kp DOWN   &kp CAPS  
+    &kp HOME   &kp END        &kp ENTER  &kp LEFT      &kp RIGHT  &mo 3         
+    &kp PG_UP  &mo 2          &mkp LCLK  &kp UP_ARROW  &trans     &trans         
             >;
         };
 
-        lower_layer {
+        second_layer {
             bindings = <
-    &bt BT_CLR &none        &sys_reset       &bootloader
-    &trans     &bt BT_SEL 3 &bt BT_SEL 4 &none
-    &none      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2
+        &trans  &kp V  &kp C      &mo 4  &kp Z   &kp LEFT_SHIFT       
+        &kp I   &kp O  &kp LCTRL  &kp J  &kp L   &mo 3               
+        &kp V   &mo 2  &kp E      &kp K  &trans  &trans              
+            >;
+        };
+
+        third_layer {
+            bindings = <
+        &none  &kp N   &kp G      &mo 4      &kp X       &kp LSHIFT      
+        &kp Q  &kp M   &mkp LCLK  &kp COMMA  &kp PERIOD  &mo 3            
+        &kp P  &trans  &kp H      &kp Y      &trans      &trans          
+            >;
+        };
+
+        fourth_layer {
+            bindings = <
+        &none  &kp B  &kp SPACE      &mo 4         &kp NUMBER_2  &kp LEFT_SHIFT    
+        &kp R  &kp F  &trans         &kp NUMBER_3  &kp NUMBER_4  &none              
+        &kp T  &none  &kp BACKSPACE  &kp NUMBER_1  &trans        &trans             
+            >;
+        };
+
+        fifth_layer {
+            bindings = <
+        &none                 &kp SLASH          &kp SEMICOLON  &trans  &kp NUMBER_6  &kp LEFT_SHIFT    
+        &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans         &kp N7  &kp N8        &none             
+        &kp NON_US_BACKSLASH  &none              &kp SQT        &kp N5  &trans        &trans            
             >;
         };
 
