@@ -1,0 +1,19 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+/* Reference: https://docs.zephyrproject.org/apidoc/latest/group__input__events.html */
+
+#include <input/processors.dtsi>
+
+
+#include <layouts/josefadamcik/sofle.dtsi>
+#include <dt-bindings/zmk/pointing.h>
+
+
+
